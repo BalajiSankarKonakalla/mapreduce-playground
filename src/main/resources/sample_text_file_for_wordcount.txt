@@ -1,0 +1,5 @@
+Hadoop is a framework for distributed storage and processing.
+Hadoop allows for big data processing.
+Big data technologies include Hadoop, Spark, and Cassandra.
+MapReduce is a programming model used in Hadoop.
+The WordCount program is a common Hadoop example.
