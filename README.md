@@ -42,16 +42,16 @@ This generates a JAR file inside the `target/` directory.
 ### 1. Running **WordCount**
 #### **Prepare Input**
 ```sh
-hdfs dfs -mkdir -p input
-hdfs dfs -put input/wordcount.txt input/
+hdfs dfs -mkdir -p /input
+hdfs dfs -mkdir -p /output
+hdfs dfs -put input/sample_text_file_for_wordcount.txt /input/
 ```
 #### **Run the Job**
 ```sh
-hadoop jar target/mapreduce-project-1.0-SNAPSHOT.jar WordCount input output_wordcount
-```
+hadoop jar target/mapreduce-playground-1.jar edu.example.mapreduce.playground.WordCount  /input/sample_text_file_for_wordcount.txt /output/wc/run1/```
 #### **View the Output**
 ```sh
-hdfs dfs -cat output_wordcount/part-r-00000
+hdfs dfs -cat /output/wc/run1/part-r-00000
 ```
 
 ---
@@ -59,16 +59,15 @@ hdfs dfs -cat output_wordcount/part-r-00000
 ### 2. Running **MatrixMultiplication**
 #### **Prepare Input**
 ```sh
-hdfs dfs -mkdir -p input
-hdfs dfs -put input/matrix.txt input/
+hdfs dfs -put input/input_matrix_2_2.txt /input/
 ```
 #### **Run the Job**
 ```sh
-hadoop jar target/mapreduce-project-1.0-SNAPSHOT.jar MatrixMultiplication input output_matrix
+hadoop jar target/mapreduce-playground-1.jar edu.example.mapreduce.playground.MatrixMultiplication  /input/input_matrix_2_2 /output/mm/run1/
 ```
 #### **View the Output**
 ```sh
-hdfs dfs -cat output_matrix/part-r-00000
+hdfs dfs -cat /output/mm/run1/part-r-00000
 ```
 
 ---
